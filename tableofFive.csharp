@@ -1,0 +1,21 @@
+using System;
+
+namespace TableOfFive
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Display table of 5
+            Console.WriteLine("Multiplication Table of 5:");
+            
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"5 x {i} = {5 * i}");
+            }
+            
+            // Wait for user input before closing the console
+            Console.ReadLine();
+        }
+    }
+}
