@@ -1,0 +1,39 @@
+using System;
+
+public class Trapezoid
+{
+    // Fields to store dimensions
+    private double base1;
+    private double base2;
+    private double height;
+
+    // Constructor
+    public Trapezoid(double base1, double base2, double height)
+    {
+        this.base1 = base1;
+        this.base2 = base2;
+        this.height = height;
+    }
+
+    // Method to calculate the area
+    public double CalculateArea()
+    {
+        return ((base1 + base2) * height) / 2;
+    }
+
+    // Main Method
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter Base 1 of the trapezoid: ");
+        double base1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter Base 2 of the trapezoid: ");
+        double base2 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter Height of the trapezoid: ");
+        double height = Convert.ToDouble(Console.ReadLine());
+
+        Trapezoid trapezoid = new Trapezoid(base1, base2, height);
+        Console.WriteLine("The area of the trapezoid is: " + trapezoid.CalculateArea());
+    }
+}
