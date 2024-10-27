@@ -1,0 +1,40 @@
+using System;
+
+public class Patient
+{
+    // Fields to store patient details
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public string Disease { get; set; }
+    public string Address { get; set; }
+
+    // Method to display patient details
+    public void DisplayDetails()
+    {
+        Console.WriteLine("Patient Details:");
+        Console.WriteLine("Name: " + Name);
+        Console.WriteLine("Age: " + Age);
+        Console.WriteLine("Disease: " + Disease);
+        Console.WriteLine("Address: " + Address);
+    }
+
+    // Main Method
+    public static void Main(string[] args)
+    {
+        Patient patient = new Patient();
+
+        Console.Write("Enter Patient's Name: ");
+        patient.Name = Console.ReadLine();
+
+        Console.Write("Enter Patient's Age: ");
+        patient.Age = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter Patient's Disease: ");
+        patient.Disease = Console.ReadLine();
+
+        Console.Write("Enter Patient's Address: ");
+        patient.Address = Console.ReadLine();
+
+        patient.DisplayDetails();
+    }
+}

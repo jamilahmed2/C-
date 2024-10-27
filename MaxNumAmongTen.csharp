@@ -1,0 +1,35 @@
+using System;
+
+public class MaxFinder
+{
+    // Method to find the maximum number in an array
+    public int FindMax(int[] numbers)
+    {
+        int max = numbers[0];
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] > max)
+            {
+                max = numbers[i];
+            }
+        }
+        return max;
+    }
+
+    // Main Method
+    public static void Main(string[] args)
+    {
+        int[] numbers = new int[10];
+
+        Console.WriteLine("Enter 10 numbers:");
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write("Number " + (i + 1) + ": ");
+            numbers[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        MaxFinder finder = new MaxFinder();
+        int max = finder.FindMax(numbers);
+        Console.WriteLine("The maximum number is: " + max);
+    }
+}

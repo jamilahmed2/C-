@@ -1,0 +1,40 @@
+Open Visual Studio > Create a Windows Forms Project > Design the Form > Write the Code
+
+In the form designer, add labels and text boxes for each field, 
+then name the text boxes according to the field 
+(e.g., txtName, txtCNIC, txtAddress, etc.). 
+Here's how to set up the labels and text boxes in the form:
+
+Label for "Name" and TextBox (txtName)
+Label for "CNIC" and TextBox (txtCNIC)
+Label for "Address" and TextBox (txtAddress)
+Label for "Date of Birth" and TextBox (txtDateOfBirth)
+Label for "Gender" and TextBox (txtGender)
+
+
+
+
+using System;
+using System.Windows.Forms;
+
+namespace NadraDataSimulation
+{
+    public partial class NadraDataForm : Form
+    {
+        public NadraDataForm()
+        {
+            InitializeComponent();
+            DisplayData();
+        }
+
+        private void DisplayData()
+        {
+            // Simulated data, replace with actual data-fetching logic
+            txtName.Text = "Jamil Ahmed";
+            txtCNIC.Text = "12345-6789012-3";
+            txtAddress.Text = "Gilgit Baltistan, Pakistan";
+            txtDateOfBirth.Text = "01-Jan-2000";
+            txtGender.Text = "Male";
+        }
+    }
+}

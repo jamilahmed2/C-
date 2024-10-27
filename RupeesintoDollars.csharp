@@ -1,0 +1,33 @@
+using System;
+
+public class CurrencyConverter
+{
+    private double exchangeRate; // Exchange rate from Rupees to Dollars
+
+    // Constructor
+    public CurrencyConverter(double rate)
+    {
+        exchangeRate = rate;
+    }
+
+    // Method to convert rupees to dollars
+    public double ConvertToDollars(double rupees)
+    {
+        return rupees / exchangeRate;
+    }
+
+    // Main Method
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter the current exchange rate (Rupees to Dollar): ");
+        double rate = Convert.ToDouble(Console.ReadLine());
+
+        CurrencyConverter converter = new CurrencyConverter(rate);
+
+        Console.Write("Enter amount in Rupees: ");
+        double rupees = Convert.ToDouble(Console.ReadLine());
+
+        double dollars = converter.ConvertToDollars(rupees);
+        Console.WriteLine("Equivalent amount in Dollars: " + dollars);
+    }
+}

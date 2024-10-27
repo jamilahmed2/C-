@@ -1,0 +1,29 @@
+using System;
+
+public class ASCIIValue
+{
+    private int asciiValue;
+
+    // Parameterized Constructor
+    public ASCIIValue(char character)
+    {
+        asciiValue = (int)character;
+    }
+
+    // Method to display ASCII value
+    public void DisplayASCIIValue()
+    {
+        Console.WriteLine("The ASCII value is: " + asciiValue);
+    }
+
+    // Main Method
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter a character: ");
+        char character = Console.ReadKey().KeyChar;
+        Console.WriteLine();
+
+        ASCIIValue ascii = new ASCIIValue(character);
+        ascii.DisplayASCIIValue();
+    }
+}

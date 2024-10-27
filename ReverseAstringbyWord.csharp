@@ -1,0 +1,30 @@
+using System;
+
+public class StringReverser
+{
+    private string reversedString;
+
+    // Parameterized Constructor
+    public StringReverser(string input)
+    {
+        string[] words = input.Split(' ');
+        Array.Reverse(words);
+        reversedString = string.Join(" ", words);
+    }
+
+    // Method to display the reversed string
+    public void DisplayReversedString()
+    {
+        Console.WriteLine("Reversed String: " + reversedString);
+    }
+
+    // Main Method
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter a string: ");
+        string input = Console.ReadLine();
+
+        StringReverser reverser = new StringReverser(input);
+        reverser.DisplayReversedString();
+    }
+}
