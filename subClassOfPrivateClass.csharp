@@ -19,18 +19,34 @@ Sub Class:|
 ----------|
 
 
-class classA {
-    private classA() {
+using System;
+
+class ClassA
+{
+    private ClassA() // Private constructor
+    {
         // First Constructor
     }
 
-    protected classA(int i) { // Changed to protected to allow inheritance
-        // Second Constructor
+    protected ClassA(int i) // Protected constructor to allow inheritance
+    {
+        Console.WriteLine("Protected constructor in ClassA called with value: " + i);
     }
 }
 
-class SubClassA extends classA {
-    public SubClassA(int i) {
-        super(i); // Calls the protected constructor in classA
+class SubClassA : ClassA
+{
+    public SubClassA(int i) : base(i) // Calls the protected constructor in ClassA
+    {
+        Console.WriteLine("Constructor in SubClassA called with value: " + i);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create an instance of SubClassA to test the code
+        SubClassA subClassInstance = new SubClassA(10);
     }
 }
