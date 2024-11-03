@@ -1,0 +1,30 @@
+4.1 Examine the following code. What is true about the variables and methods within the class NYCustomer?
+
+
+class NYcustomer{
+    public long customerPhone;
+    public void getCustomerPhone(){
+
+    }
+}
+
+
+Answer:
+---------|
+Variable:|
+---------|
+
+The variable customerPhone is of type long, which means it can hold large integer values.
+It is declared as public, so it is accessible from outside the class as well as within it.
+Method getCustomerPhone():
+
+-------|
+Method:|
+-------|
+
+The method getCustomerPhone() is a public method, so it can also be accessed from outside the class.
+It currently has an empty body { }, meaning it performs no operations or returns any values.
+The method does not have a return type specified other than void, so it doesn’t return any value.
+
+-------------------------------------------------------------------------------------------
+

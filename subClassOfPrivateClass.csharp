@@ -1,0 +1,36 @@
+4.3 Can you create a sub class to the following class?
+
+classA
+{
+    privateA()
+    {
+        //First Constructor
+    }
+     
+    privateA(inti)
+    {
+        //Second Constructor
+    }
+}
+
+
+----------|
+Sub Class:|
+----------|
+
+
+class classA {
+    private classA() {
+        // First Constructor
+    }
+
+    protected classA(int i) { // Changed to protected to allow inheritance
+        // Second Constructor
+    }
+}
+
+class SubClassA extends classA {
+    public SubClassA(int i) {
+        super(i); // Calls the protected constructor in classA
+    }
+}
