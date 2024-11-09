@@ -1,0 +1,63 @@
+using System;
+
+namespace ShapesApplication
+{
+    class Circle
+    {
+        private double radius;
+        private string color;
+
+        public Circle()
+        {
+            radius = 1.0;
+            color = "red";
+        }
+
+        public Circle(double radius)
+        {
+            this.radius = radius;
+            color = "red";
+        }
+
+        public double GetRadius()
+        {
+            return radius;
+        }
+
+        public double GetArea()
+        {
+            return Math.PI * radius * radius;
+        }
+    }
+
+    class Square : Circle
+    {
+        private double side;
+
+        public Square(double side)
+        {
+            this.side = side;
+        }
+
+        public double GetSide()
+        {
+            return side;
+        }
+
+        public double GetArea()
+        {
+            return side * side;
+        }
+
+        static void Main(string[] args)
+        {
+            Circle circle = new Circle(5.0);
+            Console.WriteLine("Circle Radius: " + circle.GetRadius());
+            Console.WriteLine("Circle Area: " + circle.GetArea());
+
+            Square square = new Square(4.0);
+            Console.WriteLine("Square Side: " + square.GetSide());
+            Console.WriteLine("Square Area: " + square.GetArea());
+        }
+    }
+}
