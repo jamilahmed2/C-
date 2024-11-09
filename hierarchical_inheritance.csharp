@@ -1,0 +1,39 @@
+using System;
+
+namespace HierarchicalInheritanceDemo
+{
+    class Animal
+    {
+        public void Eat()
+        {
+            Console.WriteLine("Animal eats food.");
+        }
+    }
+
+    class Dog : Animal
+    {
+        public void Bark()
+        {
+            Console.WriteLine("Dog barks.");
+        }
+    }
+
+    class Cat : Animal
+    {
+        public void Meow()
+        {
+            Console.WriteLine("Cat meows.");
+        }
+
+        static void Main(string[] args)
+        {
+            Dog dog = new Dog();
+            dog.Eat();
+            dog.Bark();
+
+            Cat cat = new Cat();
+            cat.Eat();
+            cat.Meow();
+        }
+    }
+}
