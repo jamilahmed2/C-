@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+
+namespace RestaurantApplication
+{
+    class Restaurant
+    {
+        public string RestaurantName { get; set; }
+        public string Location { get; set; }
+        public int NumberOfEmployees { get; set; }
+    }
+
+    class Program
+    {
+        static List<Restaurant> restaurants = new List<Restaurant>();
+
+        // Add Restaurant
+        public static void AddRestaurant(string name, string location, int employees)
+        {
+            Restaurant restaurant = new Restaurant()
+            {
+                RestaurantName = name,
+                Location = location,
+                NumberOfEmployees = employees
+            };
+            restaurants.Add(restaurant);
+        }
+
+        // Get all restaurants
+        public static void GetRestaurants()
+        {
+            foreach (var restaurant in restaurants)
+            {
+                Console.WriteLine($"Name: {restaurant.RestaurantName}, Location: {restaurant.Location}, Employees: {restaurant.NumberOfEmployees}");
+            }
+        }
+
+        // Delete Restaurant by Name
+        public static void DeleteRestaurant(string name)
+        {
+            var restaurantToRemove = restaurants.Find(r => r.RestaurantName == name);
+            if (restaurantToRemove != null)
+            {
+                restaurants.Remove(restaurantToRemove);
+                Console.WriteLine($"Restaurant {name} has been removed.");
+            }
+            else
+            {
+                Console.WriteLine("Restaurant not found.");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            AddRestaurant("The Great Restaurant", "New York", 50);
+            AddRestaurant("Foodie Heaven", "Los Angeles", 30);
+
+            Console.WriteLine("Restaurant List:");
+            GetRestaurants();
+
+            DeleteRestaurant("The Great Restaurant");
+
+            Console.WriteLine("\nUpdated Restaurant List:");
+            GetRestaurants();
+        }
+    }
+}
