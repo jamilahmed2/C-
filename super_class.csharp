@@ -1,0 +1,53 @@
+using System;
+
+public abstract class Animal
+{
+    public string Name { get; set; }
+
+    // Constructor to initialize the animal's name
+    public Animal(string name)
+    {
+        Name = name;
+    }
+
+    // Abstract method 'Talk' to be implemented by child classes
+    public abstract void Talk();
+}
+
+public class Cat : Animal
+{
+    // Constructor that calls the base constructor
+    public Cat(string name) : base(name) {}
+
+    // Implementing the 'Talk' method for Cat
+    public override void Talk()
+    {
+        Console.WriteLine($"{Name} says: Meow!");
+    }
+}
+
+public class Dog : Animal
+{
+    // Constructor that calls the base constructor
+    public Dog(string name) : base(name) {}
+
+    // Implementing the 'Talk' method for Dog
+    public override void Talk()
+    {
+        Console.WriteLine($"{Name} says: Woof!");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Creating objects of Cat and Dog
+        Animal cat = new Cat("Tom");
+        Animal dog = new Dog("Rex");
+
+        // Calling the Talk method for each object
+        cat.Talk();
+        dog.Talk();
+    }
+}
