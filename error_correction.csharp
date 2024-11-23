@@ -1,0 +1,26 @@
+using System;
+
+class Student
+{
+    private string name = "xyez";  // Fixed spelling of 'private' and 'name'
+
+    public string GetName()
+    {
+        return this.name;  // Fixed 'retsurn' to 'return'
+    }
+
+    public void SetName(string s)
+    {
+        this.name = s;  // Fixed 'This' to 'this' and '==' to '='
+    }
+}
+
+class Test
+{
+    static void Main(string[] args)
+    {
+        Student s = new Student();  // Fixed 'neew' to 'new'
+        s.SetName("xxyz");  // Fixed method call to 'SetName'
+        Console.WriteLine(s.GetName());  // Fixed 'console' to 'Console' and 'WriteLlinee' to 'WriteLine'
+    }
+}
