@@ -1,0 +1,55 @@
+using System;
+
+public abstract class Person
+{
+    public string Name { get; set; }
+
+    // Constructor to initialize the person's name
+    public Person(string name)
+    {
+        Name = name;
+    }
+
+    // Abstract method 'TicketPrice' to be implemented by child classes
+    public abstract double TicketPrice();
+}
+
+public class EmployedPerson : Person
+{
+    // Constructor that calls the base constructor
+    public EmployedPerson(string name) : base(name) {}
+
+    // Implementing the 'TicketPrice' method for Employed Person
+    public override double TicketPrice()
+    {
+        // Ticket price for employed persons with no concession
+        return 100.00;
+    }
+}
+
+public class Student : Person
+{
+    // Constructor that calls the base constructor
+    public Student(string name) : base(name) {}
+
+    // Implementing the 'TicketPrice' method for Students
+    public override double TicketPrice()
+    {
+        // Ticket price for students after a 50% concession
+        return 50.00;
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Creating objects of EmployedPerson and Student
+        Person employedPerson = new EmployedPerson("John");
+        Person student = new Student("Alice");
+
+        // Calling the TicketPrice method for each object
+        Console.WriteLine($"{employedPerson.Name} ticket price: {employedPerson.TicketPrice()}");
+        Console.WriteLine($"{student.Name} ticket price: {student.TicketPrice()}");
+    }
+}
