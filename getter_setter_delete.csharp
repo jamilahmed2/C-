@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+
+namespace AccessSpecifiers
+{
+    class Student
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+    }
+
+    class Program
+    {
+        static List<Student> students = new List<Student>();
+
+        // Add Student
+        public static void AddStudent(string id, string name, string email)
+        {
+            Student student = new Student()
+            {
+                ID = id,
+                Name = name,
+                Email = email
+            };
+            students.Add(student);
+        }
+
+        // Get all students
+        public static void GetStudents()
+        {
+            foreach (var student in students)
+            {
+                Console.WriteLine($"ID: {student.ID}, Name: {student.Name}, Email: {student.Email}");
+            }
+        }
+
+        // Delete Student by ID
+        public static void DeleteStudent(string id)
+        {
+            var studentToRemove = students.Find(s => s.ID == id);
+            if (studentToRemove != null)
+            {
+                students.Remove(studentToRemove);
+                Console.WriteLine($"Student with ID {id} has been removed.");
+            }
+            else
+            {
+                Console.WriteLine("Student not found.");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            AddStudent("101", "John Doe", "john@example.com");
+            AddStudent("102", "Jane Smith", "jane@example.com");
+
+            Console.WriteLine("Students List:");
+            GetStudents();
+
+            DeleteStudent("101");
+
+            Console.WriteLine("\nUpdated Students List:");
+            GetStudents();
+        }
+    }
+}
